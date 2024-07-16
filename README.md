@@ -1,2 +1,2 @@
 # AAPL
-![alt text](https://github.com/[Raed124]/[AAPL]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/[Raed124]/[AAPL]/blob/[branch]/AAPL_Architecture.png?raw=true)
