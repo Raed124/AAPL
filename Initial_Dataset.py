@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 import requests 
 import pandas as pd 
-import json 
 import csv
 from Api_Key import Key
 

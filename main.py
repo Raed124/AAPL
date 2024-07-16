@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
+
 import pandas as pd 
 import numpy as np  
-from matplotlib import pyplot
 import json 
 import mlflow
 #setting the tracking uri  

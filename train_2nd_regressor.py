@@ -1,7 +1,7 @@
+#!/usr/bin/env python3
+
 # making a model to forecast the adj close value to use it in the fbprohet predict method ,
 import pandas as pd 
-import numpy as np  
-from matplotlib import pyplot
 import json 
 from datetime import date 
 

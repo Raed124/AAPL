@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from datetime import date 
 from prophet.serialize import model_from_json 
 import pandas as pd 
