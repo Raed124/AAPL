@@ -4,14 +4,23 @@ import pandas as pd
 import csv
 from Api_Key import Key
 
+Dataset = 'Dataset3.csv'
 
-
-#Downlaoding the AAPL stock for the past 20 years 
+#Downlaoding the AAPL stock for the past 20 years  from alphvantage api , please check their website 
 url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&interval=5min&outputsize=full&apikey='+Key
 r = requests.get(url)
+if(r.status_code != 200):
+    print("Error : Could not connect ! ")
+    exit(1)
+else:
+    print("Connection Successful ! ")
+    
 data = r.json()
 T = data['Meta Data']
 print(T)
+
+
+
 P = data["Time Series (Daily)"]
 rows = []
 
@@ -38,6 +47,7 @@ data = yf.download(ticker, start="1999-11-01", end=today)
 data.to_csv('Dataset2.csv')
 
 
+#this will happen in either cases
 Dataframe = pd.read_csv('Dataset.csv')
 Dataframe2 =pd.read_csv('Dataset2.csv')
 
@@ -47,4 +57,4 @@ x = pd.merge(Dataframe, Dataframe2, on = "TimeStamp", how = "inner")
 
 x = x[['TimeStamp','close','Adj Close']].copy()
 
-x.to_csv('Dataset3.csv',index=False)  
+x.to_csv(Dataset,index=False)  

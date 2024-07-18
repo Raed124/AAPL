@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import pandas as pd 
 import numpy as np  
 import json 
@@ -9,8 +8,10 @@ mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
 mlflow.set_experiment("MLflow Quickstart")
 from mlflow.models import infer_signature
 
+Dataset = 'Dataset3.csv'
+
 #reading the datset 
-stockprice = pd.read_csv("Dataset3.csv",parse_dates=['TimeStamp'])
+stockprice = pd.read_csv(Dataset,parse_dates=['TimeStamp'])
 stockprice = stockprice.rename(columns={'TimeStamp': 'ds','close': 'y'})
 
 #the artifact path 
